@@ -1,0 +1,1 @@
+# Google-Ads-Search-Volume-Analysis-Funnel-Model
