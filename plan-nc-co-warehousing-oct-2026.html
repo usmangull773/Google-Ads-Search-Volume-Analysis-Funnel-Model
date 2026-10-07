@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search Demand Plan, NC Co-Warehousing</title>
+<style>
+:root{--navy:#0b1f36;--card:#12355b;--blue:#0f4c81;--gold:#c8a24a;--lgold:#e3c77f;--bg:#e9eff6;--white:#fff;--red:#b3261e;--green:#1f6f43;--text:#1a2533;--muted:#5a6878}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+h2{font-size:28px;line-height:1.25;margin-bottom:12px;color:var(--navy)}
+.num{display:inline-block;color:var(--blue);font-weight:700;font-size:14px;letter-spacing:.12em;margin-bottom:8px}
+.lead{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:32px}
+.hl{background:rgba(200,162,74,.22);padding:0 4px;border-radius:3px;font-weight:600;color:var(--navy)}
+strong{color:var(--navy)}
+/* hero */
+.hero{background:var(--navy);color:#fff;border-bottom:6px solid var(--gold);padding:28px 0 56px}
+.topbar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:#9fb3c8;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:40px}
+.label{color:var(--lgold);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.hero h1{font-size:40px;line-height:1.15;margin-bottom:16px}
+.hero .out{font-size:19px;color:#d4dee9;max-width:780px;margin-bottom:22px}
+.hero .out b{color:var(--lgold)}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;font-size:14px;color:#9fb3c8;margin-bottom:36px}
+.meta span b{color:#fff;font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kpi{background:var(--card);border-radius:10px;padding:22px}
+.kpi .v{font-size:36px;font-weight:800;color:var(--lgold);line-height:1.1}
+.kpi .t{font-size:14px;color:#c6d3e0;margin-top:6px}
+/* findings */
+.find{background:var(--white);border-radius:10px;box-shadow:0 4px 18px rgba(11,31,54,.08);padding:28px;margin-bottom:22px;border-left:5px solid var(--blue)}
+.find.med{border-left-color:var(--gold)}
+.fhead{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:10px}
+.find h3{font-size:20px;color:var(--navy);line-height:1.3}
+.tag{flex-shrink:0;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:.05em}
+.tag.high{background:var(--blue);color:#fff}
+.tag.medium{background:var(--gold);color:var(--navy)}
+.find p{color:var(--muted);margin-bottom:16px}
+/* drive time diagram */
+.geo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.geobox{border:1px solid #d5dee8;border-radius:8px;padding:16px;text-align:center}
+.geobox .cap{font-size:13px;font-weight:700;margin-bottom:10px}
+.geobox.bad .cap{color:var(--red)}
+.geobox.good .cap{color:var(--green)}
+.circle{width:150px;height:150px;border-radius:50%;border:3px dashed var(--red);margin:0 auto 10px;position:relative;background:rgba(179,38,30,.05)}
+.pin{position:absolute;left:50%;top:50%;width:12px;height:12px;background:var(--navy);border-radius:50%;transform:translate(-50%,-50%)}
+.zips{display:grid;grid-template-columns:repeat(5,26px);grid-template-rows:repeat(5,26px);gap:3px;justify-content:center;margin:0 auto 10px}
+.z{border-radius:3px;background:#eef2f6}
+.z.on{background:rgba(31,111,67,.75)}
+.z.core{background:var(--navy)}
+.geobox .note{font-size:13px;color:var(--muted)}
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:600}
+td{padding:10px 12px;border-bottom:1px solid #e3e9f0;vertical-align:top}
+tr:nth-child(even) td{background:#f6f8fb}
+.scroll{overflow-x:auto}
+.cmp th.r{background:var(--red)}
+.cmp th.g{background:var(--green)}
+.cmp td.r{color:var(--red)}
+.cmp td.g{color:var(--green);font-weight:600}
+/* plan */
+.plan{background:var(--white)}
+.timeline{background:var(--navy);border-radius:12px;padding:28px;color:#fff;margin-bottom:34px}
+.timeline .th{font-size:13px;color:#9fb3c8;margin-bottom:18px;letter-spacing:.08em;text-transform:uppercase}
+.trow{display:grid;grid-template-columns:200px 1fr;gap:14px;align-items:center;margin-bottom:12px}
+.trow .n{font-size:14px;color:#d4dee9}
+.track{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;height:26px}
+.track div{background:rgba(255,255,255,.07);border-radius:4px}
+.track div.on{background:var(--gold)}
+.wk{display:grid;grid-template-columns:200px 1fr;gap:14px;margin-top:6px}
+.wk .ws{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;font-size:12px;color:#9fb3c8;text-align:center}
+.steps{display:grid;gap:16px}
+.step{display:grid;grid-template-columns:52px 1fr;gap:16px;background:var(--bg);border-radius:10px;padding:22px}
+.step .sn{width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:18px}
+.step h4{font-size:18px;color:var(--navy);margin-bottom:4px}
+.step p{color:var(--muted);font-size:15px}
+.step .why{margin-top:6px;font-size:14px;color:var(--blue);font-weight:600}
+/* funnel */
+.funnel{margin-top:34px;background:var(--bg);border-radius:12px;padding:26px}
+.funnel h4{color:var(--navy);font-size:18px;margin-bottom:4px}
+.funnel .sub{font-size:14px;color:var(--muted);margin-bottom:18px}
+.fb{margin:0 auto 6px;background:var(--navy);color:#fff;border-radius:6px;padding:10px 14px;display:flex;justify-content:space-between;gap:10px;font-size:14px}
+.fb span:last-child{color:var(--lgold);font-size:13px;text-align:right}
+.fb.end{background:var(--gold);color:var(--navy);font-weight:700}
+.fb.end span:last-child{color:var(--navy)}
+/* results */
+.results{background:var(--navy);color:#fff}
+.results h2{color:#fff}
+.results .lead{color:#b8c7d7}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rc{background:var(--card);border-radius:12px;padding:24px}
+.rc .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#9fb3c8;margin-bottom:6px}
+.rc .big{font-size:34px;font-weight:800;color:var(--lgold);line-height:1.1;margin-bottom:4px}
+.rc .d{font-size:14px;color:#d4dee9;margin-bottom:18px}
+.bar{margin-bottom:10px}
+.bar .bl{display:flex;justify-content:space-between;font-size:13px;color:#b8c7d7;margin-bottom:4px}
+.bar .bt{height:12px;background:rgba(255,255,255,.08);border-radius:6px;overflow:hidden}
+.bar .bf{height:100%;background:var(--gold);border-radius:6px}
+.bar .bf.pre{background:#5d7894}
+.rc .ctx{font-size:13px;color:#9fb3c8;margin-top:12px;border-top:1px solid rgba(255,255,255,.1);padding-top:12px}
+.stat{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;color:#d4dee9}
+.stat b{color:var(--lgold);font-size:20px}
+/* next */
+.ngrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.nc{background:var(--white);border-radius:10px;border-top:5px solid var(--gold);padding:24px;box-shadow:0 4px 18px rgba(11,31,54,.06)}
+.nc .st{font-size:13px;font-weight:700;color:var(--blue);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.nc h4{font-size:18px;color:var(--navy);margin-bottom:6px}
+.nc p{font-size:15px;color:var(--muted)}
+.cta{background:var(--gold);padding:44px 0;text-align:center}
+.cta h2{color:var(--navy);margin-bottom:6px}
+.cta p{color:var(--navy);font-size:17px}
+footer{background:var(--navy);color:#b8c7d7;padding:26px 0;text-align:center;font-size:14px}
+footer b{color:#fff}
+@media(max-width:820px){
+ .kpis,.rgrid,.ngrid{grid-template-columns:1fr}
+ .hero h1{font-size:30px}
+ h2{font-size:24px}
+ section{padding:48px 0}
+ .trow,.wk{grid-template-columns:1fr;gap:6px}
+ .geo{grid-template-columns:1fr}
+}
+@media(max-width:420px){
+ .wrap{padding:0 16px}
+ .hero h1{font-size:26px}
+ .find,.rc,.nc,.timeline,.funnel{padding:18px}
+ .step{grid-template-columns:1fr;padding:18px}
+ .fhead{flex-direction:column}
+ .fb{flex-direction:column;gap:2px}
+ .fb span:last-child{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+ <div class="wrap">
+  <div class="topbar"><span>Search Demand Analysis and Conversion Funnel Model</span><span>October 2026</span></div>
+  <div class="label">30 day plan prepared for</div>
+  <h1>North Carolina Co-Warehousing Facility</h1>
+  <p class="out">A defensible answer to one question: <b>how many customers can Google Search realistically deliver</b> for each product, inside a true 20 minute drive of the facility.</p>
+  <div class="meta">
+   <span>Channel: <b>Google Search</b></span>
+   <span>Source: <b>Google Keyword Planner</b></span>
+   <span>Deliverable: <b>PDF report</b></span>
+  </div>
+  <div class="kpis">
+   <div class="kpi"><div class="v">3</div><div class="t">Product funnels: co-warehousing, private offices, meeting rooms</div></div>
+   <div class="kpi"><div class="v">6</div><div class="t">Price scenarios modelled, low and high for each product</div></div>
+   <div class="kpi"><div class="v">20 min</div><div class="t">Drive time trade area, mapped by road, not by city name</div></div>
+  </div>
+ </div>
+</header>
+
+<section>
+ <div class="wrap">
+  <div class="num">01</div>
+  <h2>What we found</h2>
+  <p class="lead">The brief is clear. The risk is in three places where this kind of analysis usually goes wrong, and each one changes the final customer number. <span class="hl">Get these right and the model holds up when you take it to an operator or landlord.</span></p>
+
+  <div class="find">
+   <div class="fhead"><h3>A 20 minute drive is not a circle</h3><span class="tag high">High impact</span></div>
+   <p>A simple radius pulls in areas across highways, rivers or rural stretches that take far longer than 20 minutes to drive, and cuts out areas along fast roads. <strong>The boundary will be built from the actual drive time zone</strong>, then applied in Keyword Planner as the matching set of ZIP codes, with a radius cross check. You get a screenshot of the exact targeting, plus the ZIP list, so you can confirm it before any numbers are pulled.</p>
+   <div class="geo">
+    <div class="geobox bad"><div class="cap">Radius only</div><div class="circle"><div class="pin"></div></div><div class="note">Includes slow to reach areas, misses areas on fast roads</div></div>
+    <div class="geobox good"><div class="cap">Drive time ZIP set</div>
+     <div class="zips">
+      <div class="z"></div><div class="z on"></div><div class="z on"></div><div class="z"></div><div class="z"></div>
+      <div class="z on"></div><div class="z on"></div><div class="z on"></div><div class="z on"></div><div class="z"></div>
+      <div class="z"></div><div class="z on"></div><div class="z core"></div><div class="z on"></div><div class="z on"></div>
+      <div class="z"></div><div class="z on"></div><div class="z on"></div><div class="z on"></div><div class="z"></div>
+      <div class="z"></div><div class="z"></div><div class="z on"></div><div class="z"></div><div class="z"></div>
+     </div>
+     <div class="note">Follows the road network, verifiable ZIP by ZIP</div></div>
+   </div>
+  </div>
+
+  <div class="find">
+   <div class="fhead"><h3>"Co-warehousing" alone has thin search demand</h3><span class="tag high">High impact</span></div>
+   <p>It is a new category, and most small businesses who need it do not search for it by name. <strong>The real demand sits in adjacent searches</strong> such as small warehouse space, business storage and flex space. Each product gets its own keyword set built from these intent groups, so the volume reflects how buyers actually search.</p>
+   <div class="scroll"><table>
+    <tr><th>Product</th><th>Keyword groups to pull</th></tr>
+    <tr><td><strong>Co-warehousing / storage</strong></td><td>co-warehousing, small warehouse space for rent, business storage unit, flex warehouse, shared warehouse, storage for small business</td></tr>
+    <tr><td><strong>Private offices</strong></td><td>private office space, office for rent, small office space, executive suite, office space near me</td></tr>
+    <tr><td><strong>Meeting rooms</strong></td><td>conference room rental, meeting room by the hour, meeting space rental, board room rental</td></tr>
+   </table></div>
+  </div>
+
+  <div class="find med">
+   <div class="fhead"><h3>Funnel rates need to be stated, not hidden</h3><span class="tag medium">Medium impact</span></div>
+   <p>The customer estimate is only as good as the rates behind each step. Every rate in the model is shown as an editable assumption with its reasoning, and <strong>the action rate changes with price</strong>, which is why low and high price points are modelled separately.</p>
+   <div class="scroll"><table class="cmp">
+    <tr><th class="r">Common shortcut</th><th class="g">This model</th></tr>
+    <tr><td class="r">One blended conversion rate for everything</td><td class="g">Separate rates per product and per price point</td></tr>
+    <tr><td class="r">Assumes 100% of searches see the ad</td><td class="g">Impressions adjusted for realistic impression share</td></tr>
+    <tr><td class="r">National volume scaled down by population</td><td class="g">Volume pulled for the trade area itself</td></tr>
+    <tr><td class="r">Numbers with no audit trail</td><td class="g">Keyword level data appended, every figure traceable</td></tr>
+   </table></div>
+  </div>
+ </div>
+</section>
+
+<section class="plan">
+ <div class="wrap">
+  <div class="num">02</div>
+  <h2>The 30 day plan</h2>
+  <p class="lead">The full report is delivered in week one. The remaining weeks cover your review, scenario changes and a launch ready keyword file if you decide to run ads.</p>
+
+  <div class="timeline">
+   <div class="th">Timeline</div>
+   <div class="trow"><div class="n">Boundary and keyword sets</div><div class="track"><div class="on"></div><div></div><div></div><div></div></div></div>
+   <div class="trow"><div class="n">Volume pull and funnel model</div><div class="track"><div class="on"></div><div></div><div></div><div></div></div></div>
+   <div class="trow"><div class="n">PDF report delivered</div><div class="track"><div class="on"></div><div></div><div></div><div></div></div></div>
+   <div class="trow"><div class="n">Review and scenario changes</div><div class="track"><div></div><div class="on"></div><div class="on"></div><div></div></div></div>
+   <div class="trow"><div class="n">Launch ready keyword file</div><div class="track"><div></div><div></div><div></div><div class="on"></div></div></div>
+   <div class="wk"><div></div><div class="ws"><span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span></div></div>
+  </div>
+
+  <div class="steps">
+   <div class="step"><div class="sn">1</div><div><h4>Map the 20 minute drive time zone and lock the boundary</h4><p>Build the drive time area from the facility address, convert it to ZIP codes, apply it in Keyword Planner and send you the targeting screenshot first.</p><div class="why">Why: every number after this depends on the boundary being right.</div></div></div>
+   <div class="step"><div class="sn">2</div><div><h4>Build and pull three keyword sets</h4><p>Pull 12 month average search volume for each product's keyword groups, remove irrelevant and duplicate terms, and flag seasonality.</p><div class="why">Why: clean, intent matched volume is the top of every funnel.</div></div></div>
+   <div class="step"><div class="sn">3</div><div><h4>Model six funnels</h4><p>For each product at a low and high price: monthly searches, impressions, clicks, landing page views, actions and estimated customers, with every rate visible.</p><div class="why">Why: price changes how many visitors act, so it needs its own row.</div></div></div>
+   <div class="step"><div class="sn">4</div><div><h4>Deliver the PDF report</h4><p>One funnel visualization per product, the boundary screenshot, assumptions table and keyword level appendix.</p><div class="why">Why: built to be read in five minutes and checked line by line.</div></div></div>
+   <div class="step"><div class="sn">5</div><div><h4>Review call, revisions and launch file</h4><p>Adjust any rate or price point after your review, then hand over the keyword list and starter negatives ready to import if ads go live.</p><div class="why">Why: the research turns straight into a campaign without starting over.</div></div></div>
+  </div>
+
+  <div class="funnel">
+   <h4>Funnel structure used for each product and price point</h4>
+   <div class="sub">Structure only. Real figures are filled in from the trade area data.</div>
+   <div class="fb" style="width:100%"><span>Monthly search volume</span><span>Keyword Planner, trade area</span></div>
+   <div class="fb" style="width:88%"><span>Estimated impressions</span><span>volume x impression share</span></div>
+   <div class="fb" style="width:74%"><span>Clicks</span><span>impressions x click rate</span></div>
+   <div class="fb" style="width:62%"><span>Landing page views</span><span>clicks x page load rate</span></div>
+   <div class="fb" style="width:50%"><span>Actions (enquiry, tour, booking)</span><span>views x action rate</span></div>
+   <div class="fb end" style="width:40%"><span>Estimated customers</span><span>actions x close rate</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="results">
+ <div class="wrap">
+  <div class="num" style="color:var(--lgold)">03</div>
+  <h2>Comparable results</h2>
+  <p class="lead">Local search work where trade area targeting and funnel rates drove the outcome.</p>
+  <div class="rgrid">
+   <div class="rc">
+    <div class="k">Local market coverage</div>
+    <div class="big">70.28%</div>
+    <div class="d">Impression share won, up from 37.82%, in a single month</div>
+    <div class="bar"><div class="bl"><span>Before</span><span>37.82%</span></div><div class="bt"><div class="bf pre" style="width:37.82%"></div></div></div>
+    <div class="bar"><div class="bl"><span>After</span><span>70.28%</span></div><div class="bt"><div class="bf" style="width:70.28%"></div></div></div>
+    <div class="ctx">UK laser and aesthetics clinic, Search</div>
+   </div>
+   <div class="rc">
+    <div class="k">Action rate</div>
+    <div class="big">14.08%</div>
+    <div class="d">Conversion rate, up from 8.61%, while leads rose 50%</div>
+    <div class="bar"><div class="bl"><span>Before</span><span>8.61%</span></div><div class="bt"><div class="bf pre" style="width:38%"></div></div></div>
+    <div class="bar"><div class="bl"><span>After</span><span>14.08%</span></div><div class="bt"><div class="bf" style="width:62%"></div></div></div>
+    <div class="ctx">UK dental practice, Search and Performance Max</div>
+   </div>
+   <div class="rc">
+    <div class="k">Keyword and account depth</div>
+    <div class="stat"><span>Keywords generating impressions</span><b>3,400+</b></div>
+    <div class="stat"><span>Total campaigns</span><b>977</b></div>
+    <div class="stat"><span>Ad spend managed</span><b>$15.5M</b></div>
+    <div class="stat"><span>Combined impressions, 7 live accounts</span><b>205K+</b></div>
+    <div class="ctx">Portfolio totals across 10+ years</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="num">04</div>
+  <h2>What happens next</h2>
+  <p class="lead">Three short steps and the boundary screenshot is with you within the first 48 hours.</p>
+  <div class="ngrid">
+   <div class="nc"><div class="st">Step 1</div><h4>Quick call</h4><p>15 minutes to confirm the facility location, price points for each product and how you define a customer.</p></div>
+   <div class="nc"><div class="st">Step 2</div><h4>Boundary sign off</h4><p>You receive the drive time map, ZIP list and Keyword Planner targeting screenshot to approve before data is pulled.</p></div>
+   <div class="nc"><div class="st">Step 3</div><h4>Report delivered</h4><p>The PDF with three funnel visualizations, six price scenarios and the keyword appendix, inside week one.</p></div>
+  </div>
+ </div>
+</section>
+
+<div class="cta">
+ <div class="wrap">
+  <h2>Let's have a quick call</h2>
+  <p>Reply to my message with a time that suits you.</p>
+ </div>
+</div>
+
+<footer><div class="wrap"><b>Usman Gull</b>, Google Ads and SEO Specialist</div></footer>
+
+</body>
+</html>
